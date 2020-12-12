@@ -3,6 +3,8 @@ package praOnWebElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 
 public class WebElement2 {
 
@@ -29,7 +31,7 @@ public class WebElement2 {
 		
 		 driver.get("https://www.selenium.dev/selenium/docs/api/java/index.html?overview-summary.html");
 		 driver.manage().window().maximize();
-		 driver.switchTo().frame("packageListFrame");
+		 WebDriver wb=driver.switchTo().frame("packageListFrame");
 		 driver.findElement(By.linkText("org.openqa.selenium.grid.sessionmap")).click();;
 	
 		 driver.switchTo().defaultContent();
@@ -40,6 +42,9 @@ public class WebElement2 {
 		 driver.switchTo().frame("classFrame");
 		 driver.findElement(By.linkText("Deprecated")).click();
 		 driver.close();
+		 
+		 Actions act=new Actions(driver);
+		  act.moveToElement(null);
 		
 	}
 
